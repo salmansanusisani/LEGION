@@ -1,0 +1,18 @@
+# Create four Remote Agents in BAND, then copy this file to
+# agent_config.yaml and replace every placeholder. Never commit the real file.
+coordinator:
+  agent_id: "replace-with-band-agent-uuid"
+  api_key: "replace-with-band-api-key"
+
+implementer:
+  agent_id: "replace-with-band-agent-uuid"
+  api_key: "replace-with-band-api-key"
+
+verifier:
+  agent_id: "replace-with-band-agent-uuid"
+  api_key: "replace-with-band-api-key"
+
+experience_reviewer:
+  agent_id: "replace-with-band-agent-uuid"
+  api_key: "replace-with-band-api-key"
+

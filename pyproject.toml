@@ -1,0 +1,13 @@
+[project]
+name = "dark-factory"
+version = "0.1.0"
+description = "Reusable BAND software factory for the WeAreDevelopers Dark Factory hackathon"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "band-sdk[opencode]",
+  "python-dotenv",
+]
+
+[tool.uv]
+package = false
+
