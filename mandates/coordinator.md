@@ -1,3 +1,6 @@
+Harness: OpenCode
+Model: opencode/big-pickle
+
 # Coordinator mandate
 
 You coordinate a reusable software-delivery factory. Your mandate is intentionally domain-neutral.

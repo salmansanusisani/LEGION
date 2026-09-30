@@ -6,5 +6,10 @@ __pycache__/
 *.log
 .DS_Store
 
+# Organizer checkout: specifications, shipped tests, and harness are inputs,
+# not part of the submission repository.
+_organizer/
+_practice/
+
 # Keep exported judging evidence, but never raw secrets.
 evidence/private/
