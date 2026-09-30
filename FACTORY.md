@@ -16,11 +16,17 @@ All standing mandates are stored in `mandates/` and are domain-neutral. Track-sp
 ## Runtime
 
 - Collaboration: BAND Desktop and BAND rooms
-- Agent harness: BAND SDK OpenCode adapter
+- Agent harness: BAND-owned OpenCode ACP runtimes
 - Model: `opencode/big-pickle`
-- Credentials: local ignored `agent_config.yaml`
-- Default development mode: manual approvals
-- Official autonomous mode: isolated environment with `BAND_AUTONOMOUS=1`
+- Authentication: inherited from the local OpenCode account; no provider key is stored in this repository
+- Runtime approval policy: `approve-all` for headless agent operation
+- Persistent BAND handles:
+  - `salmansanusi90/legion-coordinator`
+  - `salmansanusi90/legion-implementer`
+  - `salmansanusi90/legion-verifier`
+  - `salmansanusi90/legion-experience-review`
+
+The first connectivity room is rehearsal-only and must not be submitted as the official hackathon run.
 
 ## Acceptance protocol
 
@@ -39,4 +45,3 @@ All standing mandates are stored in `mandates/` and are domain-neutral. Track-sp
 - Checks run, failures found, repairs made, and regressions prevented
 - Container build/start command and offline verification
 - Known limitations and unverified claims
-

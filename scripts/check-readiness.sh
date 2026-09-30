@@ -16,6 +16,7 @@ check_command() {
 check_command git
 check_command docker
 check_command opencode
+check_command band
 
 if command -v band-desktop >/dev/null 2>&1; then
   echo "OK      band-desktop"
@@ -24,11 +25,10 @@ else
   failed=1
 fi
 
-if [[ -x .venv/bin/python ]] && .venv/bin/python -c \
-  'from band.adapters import OpencodeAdapter, OpencodeAdapterConfig' 2>/dev/null; then
-  echo "OK      BAND OpenCode adapter"
+if band whoami >/dev/null 2>&1; then
+  echo "OK      BAND account"
 else
-  echo "MISSING BAND OpenCode adapter"
+  echo "MISSING BAND account (run: band init)"
   failed=1
 fi
 
@@ -39,10 +39,11 @@ else
   failed=1
 fi
 
-if [[ -f agent_config.yaml ]]; then
-  echo "OK      agent_config.yaml"
+agent_count="$(band list 2>/dev/null | grep -c 'salmansanusi90/legion-' || true)"
+if [[ "$agent_count" == "4" ]]; then
+  echo "OK      four persistent LEGION seats"
 else
-  echo "PENDING agent_config.yaml (create four BAND Remote Agents first)"
+  echo "MISSING four persistent LEGION seats (found $agent_count)"
   failed=1
 fi
 

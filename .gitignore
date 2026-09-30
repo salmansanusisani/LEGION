@@ -2,11 +2,9 @@
 __pycache__/
 *.py[cod]
 .env
-agent_config.yaml
 .opencode/
 *.log
 .DS_Store
 
 # Keep exported judging evidence, but never raw secrets.
 evidence/private/
-
