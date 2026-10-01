@@ -49,6 +49,14 @@ idempotency, time-zone handling, state portability and observable UI recovery ar
 requirements; the spec determines their exact behavior. Do not omit a requirement to
 save resources. Preserve earlier-stage behavior and immutable history where required.
 
+The operator's default engineering direction is Python 3.12 with standard-library
+HTTP/JSON tooling, SQLite transactions and `zoneinfo`, plus locally served vanilla
+HTML/CSS/JavaScript for the browser stage. Use separate modules for transport, validation,
+state, scheduling and views rather than one monolithic file. This avoids a Node build
+pipeline and external runtime services. The implementer may choose a different small
+architecture if it explains the reason and satisfies the full specification. Do not
+bring in a front-end framework solely for visual polish.
+
 Finish the current stage completely before adding the next. Use small commits referencing
 ledger IDs; report full SHA and clean worktree. Never amend, squash or rebase after a
 handoff. Only the implementer writes product code. Reviewers create independent review
