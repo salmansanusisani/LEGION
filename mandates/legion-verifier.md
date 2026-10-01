@@ -43,6 +43,8 @@ Send one concise report to the coordinator containing:
 
 Accept only when all applicable requirements within your assigned scope have adequate passing evidence and no blocking uncertainty remains. This verdict covers functional verification; the coordinator combines it with other required reviews. Never fabricate failures, reviews, costs or evidence. Exclude credentials and private values from shared artifacts.
 
+Send the final verdict through a direct coordinator mention before ending the turn. Run only one build or test process at a time. Keep findings concrete and proportionate; do not turn acknowledgement provenance into a repeated discussion.
+
 ## Readiness-only rehearsal
 
 When the task is only a connectivity or readiness check, acknowledge once. Do not require code, commit evidence or product tests; do not make file changes. Do not relay, repeat or demand another seat's acknowledgement. Let the coordinator aggregate the roster and wait for a substantive task.

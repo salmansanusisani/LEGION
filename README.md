@@ -1,5 +1,13 @@
 # BAND Dark Factory starter
 
+Track: **Tablekeeper**. Team repository: `salmansanusisani/LEGION`.
+
+This checkout is the official result workspace. Factory setup and the teammate's
+coverage checklist are present; the stage folders remain placeholders until the
+BAND factory builds and independently accepts them. The planned official run is
+defined by `evidence/official-dispatch.md`. No completed Tablekeeper stage is claimed
+by this preparation commit.
+
 Local scaffold for the WeAreDevelopers × BAND Dark Factory hackathon. It uses four persistent BAND-owned OpenCode identities, one generic mandate per seat, and `opencode/big-pickle`.
 
 ## Current local setup

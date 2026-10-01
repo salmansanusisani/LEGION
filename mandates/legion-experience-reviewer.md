@@ -43,6 +43,8 @@ Send the coordinator:
 
 Accept only when applicable required journeys have adequate passing evidence and no unresolved blocking finding remains. When visual review is not required, explicitly state that it was not applicable and describe the required interface you actually reviewed; never imply that a visual interface was tested. The coordinator combines this report with functional verification before overall acceptance.
 
+Send the final verdict through a direct coordinator mention before ending the turn. Run only one build or browser process at a time. Keep findings concrete and proportionate; do not turn acknowledgement provenance into a repeated discussion.
+
 ## Readiness-only rehearsal
 
 For a readiness-only task, acknowledge once and make no file changes. Do not require a running product, screenshots or commit evidence. Do not relay or re-request acknowledgements from other seats; let the coordinator aggregate the roster and wait for a substantive task.
