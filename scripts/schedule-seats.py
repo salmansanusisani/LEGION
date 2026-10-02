@@ -54,12 +54,16 @@ def messages(room):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("room")
-    parser.add_argument("--active", default="legion-lead", choices=SEATS)
+    parser.add_argument("--active", default="legion-lead", choices=[*SEATS, "none"])
     parser.add_argument("--evidence", required=True, type=pathlib.Path)
     args = parser.parse_args()
     args.evidence.parent.mkdir(parents=True, exist_ok=True)
     seen = set()
-    active = args.active
+    if args.evidence.exists():
+        for line in args.evidence.read_text().splitlines():
+            row = json.loads(line)
+            seen.update(row.get("handoff_keys", []))
+    active = None if args.active == "none" else args.active
     activated = dt.datetime.now(dt.timezone.utc)
     idle_since = None
     deferred = None
@@ -103,7 +107,12 @@ def main():
             active = None
             idle_since = time.monotonic()
 
-        pending = [row for row in messages(args.room) if row[1] not in seen]
+        try:
+            pending = [row for row in messages(args.room) if row[1] not in seen]
+        except (RuntimeError, subprocess.TimeoutExpired) as error:
+            record("room_read_retry", detail=str(error))
+            time.sleep(30)
+            continue
         if not pending:
             if idle_since is not None and time.monotonic() - idle_since > 90:
                 record("no_addressed_handoff", outcome="requires_operator_inspection")
@@ -121,9 +130,7 @@ def main():
                     deferred = target
                 time.sleep(30)
                 continue
-        for row in pending:
-            if row[2] == target:
-                seen.add(row[1])
+        handoff_keys = [row[1] for row in pending if row[2] == target]
         # Start the existing peer, then bind the existing room-specific runtime.
         activated = dt.datetime.now(dt.timezone.utc)
         command(["band", "--session", target, "onboard", "--host", "generic"])
@@ -135,9 +142,10 @@ def main():
                      "default-" + args.room, "--room", args.room, "--runtime", "owned",
                      "--transport", "opencode"])
         active = target
+        seen.update(handoff_keys)
         idle_since = None
         deferred = None
-        record("seat_started", seat=target, sender=pending[0][3])
+        record("seat_started", seat=target, sender=pending[0][3], handoff_keys=handoff_keys)
         time.sleep(20)
 
 
