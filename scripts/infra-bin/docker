@@ -41,7 +41,7 @@ if [[ "${1:-}" == build && "$is_runner" == true ]]; then
     fi
     previous="$arg"
   done
-  printf 'Infrastructure adapter: official runner dependency pins, 180s download timeout.\n' >&2
+  printf 'Infrastructure adapter: official test pins, pip 26.2.1 resumable downloads, 180s timeout.\n' >&2
   exec "$real_docker" "${adapted[@]}"
 fi
 exec "$real_docker" "$@"

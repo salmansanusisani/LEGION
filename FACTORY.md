@@ -64,8 +64,12 @@ The organizer's harness, tests, requirements and checkout remain unchanged. The
 original runner recipe repeatedly failed during dependency downloading, including
 a pip read timeout after 27 MB of a 48 MB wheel. An infrastructure adapter uses
 `scripts/runner-bootstrap.Dockerfile`, which preserves the Python image, exact
-dependency pins, installation commands and working directory while increasing
-dependency-download timeouts to 180 seconds. This does not change any service
+dependency pins and working directory while increasing
+dependency-download timeouts to 180 seconds. A subsequent timeout showed that the
+base image's older pip discarded partial wheels. The adapter now pins only the
+installer to `pip==26.2.1`, enables up to 20 resume attempts and separates completed
+install steps into cached build layers. Test-library versions and the browser
+installation command remain unchanged. This does not change any service
 request, startup, suite or runtime-network limit.
 
 `scripts/infra-bin/docker` applies this disclosed recipe only when the harness
