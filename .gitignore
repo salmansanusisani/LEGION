@@ -13,3 +13,6 @@ _practice/
 
 # Keep exported judging evidence, but never raw secrets.
 evidence/private/
+
+# Live operator telemetry is included explicitly after the run finishes.
+evidence/resource-schedule.jsonl
