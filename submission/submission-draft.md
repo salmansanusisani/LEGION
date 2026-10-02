@@ -38,7 +38,7 @@ Limited host memory motivated sequential, distinct-seat execution. Slow and unst
 - Full BAND export: pending
 - Demo video: pending
 - Slide presentation: pending
-- Cover illustration: pending
+- Cover illustration: `submission/assets/cover.png` (generated conceptual artwork)
 
 ## Team and tools
 

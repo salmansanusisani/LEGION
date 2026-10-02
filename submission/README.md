@@ -14,7 +14,7 @@ The target is the [WeAreDevelopers × BAND Dark Factory hackathon](https://labla
 - [ ] FACTORY and README describe actual results, accepted SHAs, usage, failures and limitations; the download-timeout adapter is disclosed.
 - [ ] Complete, untouched BAND session export is saved as root `room.json` and checked for completeness. CLI page backups are not a substitute unless the organizer accepts that format.
 - [ ] Public GitHub main contains all artifacts and teammate history.
-- [ ] Cover art is present and accurately labelled as illustration, not product evidence.
+- [x] Cover art is present and accurately labelled as illustration, not product evidence.
 - [ ] Editable slide presentation is finalized with actual results and screenshots.
 - [ ] Demo video shows the real BAND room, a real addressed handoff and resulting work, plus the delivered app.
 - [ ] Submission text matches verified delivery; all external material links work without account access.
