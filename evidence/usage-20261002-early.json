@@ -1,0 +1,58 @@
+{
+  "captured_at": "2026-10-02T21:48:14.515925+00:00",
+  "room": "ee44a58f-9400-44ac-bb1f-21570fbea358",
+  "source": "OpenCode local session counters, read-only",
+  "cost_disclaimer": "Model-reported cost is not verified provider billing. Zero does not prove free usage.",
+  "seats": [
+    {
+      "seat": "legion-lead",
+      "sessions": [
+        {
+          "id": "ses_f02103ef6ffe8Jd3Gaj0ScIsn8",
+          "tokens_input": 70665,
+          "tokens_output": 15069,
+          "tokens_reasoning": 5765,
+          "tokens_cache_read": 1472196,
+          "tokens_cache_write": 0,
+          "model_reported_cost": 0.0,
+          "time_created": 1790966743305,
+          "time_updated": 1790967500434
+        }
+      ]
+    },
+    {
+      "seat": "legion-builder",
+      "sessions": [
+        {
+          "id": "ses_f01b412c4ffex6iALSfxdj3l71",
+          "tokens_input": 128610,
+          "tokens_output": 70485,
+          "tokens_reasoning": 0,
+          "tokens_cache_read": 6328448,
+          "tokens_cache_write": 0,
+          "model_reported_cost": 0.0,
+          "time_created": 1790972783932,
+          "time_updated": 1790977610384
+        }
+      ]
+    },
+    {
+      "seat": "legion-checker",
+      "sessions": [
+        {
+          "id": null,
+          "counters": "unavailable; do not treat as zero"
+        }
+      ]
+    },
+    {
+      "seat": "legion-ux",
+      "sessions": [
+        {
+          "id": null,
+          "counters": "unavailable; do not treat as zero"
+        }
+      ]
+    }
+  ]
+}

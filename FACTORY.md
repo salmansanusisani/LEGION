@@ -101,6 +101,17 @@ stop/restart rather than bulk detach.
 
 ## Measurements to complete during the run
 
+`scripts/capture-usage.py` snapshots numeric OpenCode counters for only the four
+official-room provider session IDs. It reads the local database in read-only mode,
+does not export messages or credentials, and refuses to overwrite an earlier
+snapshot. These are cumulative session counters: use differences between snapshots
+for stage-level attribution when the same session spans multiple stages. Missing
+counters mean unknown, not zero. Model-reported cost is not verified billing.
+
+The first snapshot is `evidence/usage-20261002-early.json`. BAND's ccusage-backed
+command had returned no sessions for this OpenCode runtime, so the direct numeric
+snapshot is reported separately rather than pretending BAND supplied it.
+
 - Start/end time and elapsed time per stage
 - Model and token/resource use per seat
 - Revisions produced and accepted
