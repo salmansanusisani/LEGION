@@ -76,6 +76,12 @@ def main():
         print(json.dumps(row), flush=True)
 
     record("scheduler_started", active=active, room=args.room)
+    if active:
+        # A recovered runtime is already consuming its queued handoffs. Record
+        # them rather than scheduling the same work again after its turn ends.
+        resumed_keys = [row[1] for row in messages(args.room) if row[2] == active]
+        seen.update(resumed_keys)
+        record("active_seat_resumed", seat=active, handoff_keys=resumed_keys)
     while True:
         if available_memory() < 1280:
             if active:
