@@ -1,6 +1,6 @@
 # Cover illustration preparation
 
-Status: active cover illustration is `assets/cover-v2.png`, redesigned at the owner's request as a group of four geometric forms representing the four agents, with LEGION as the main title. The original hospitality illustration remains at `assets/cover.png`. No paid API fallback was invoked.
+Status: active, owner-approved cover illustration is `assets/cover-v3.png`: one blue blueprint pyramid divided into four tiers by waveform cuts, with white tech-font LEGION lettering. Its exact prompt is in `cover-prompt-v3.md`. The four-shape revision below and original hospitality illustration are superseded and preserved. No paid API fallback was invoked.
 
 Tool mode: built-in image generation, edit using the original cover as the target. The 1672 × 941 landscape artwork was visually inspected: exactly four distinct forms, correct role labels and legible LEGION/Tablekeeper text. It is conceptual artwork, not a product screenshot or acceptance evidence.
 

@@ -38,7 +38,7 @@ Limited host memory motivated sequential, distinct-seat execution. Slow and unst
 - Full BAND export: pending
 - Demo video: pending
 - Slide presentation: pending
-- Cover illustration: `submission/assets/cover-v2.png` (four-agent geometric group portrait, generated conceptual artwork)
+- Cover illustration: `submission/assets/cover-v3.png` (approved four-tier blue blueprint pyramid, generated conceptual artwork)
 
 ## Team and tools
 

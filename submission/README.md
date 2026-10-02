@@ -26,7 +26,7 @@ No submission is sent by this preparation workflow. Final registration, acceptan
 - `submission-draft.md`: reusable copy; completion-dependent sections remain explicitly pending.
 - `demo-script.md`: recording plan, not an existing video.
 - `cover-prompt.md`: generated-art provenance after the cover is available.
-- `assets/cover-v2.png`: active four-agent geometric cover. `assets/cover.png` is the preserved earlier version.
+- `assets/cover-v3.png`: approved blueprint pyramid cover with four waveform-separated tiers. Earlier versions are preserved at `assets/cover.png` and `assets/cover-v2.png`.
 
 ## Current recovery checkpoint
 
