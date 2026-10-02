@@ -20,10 +20,10 @@ Local scaffold for the WeAreDevelopers × BAND Dark Factory hackathon. It uses f
 
 Persistent seats:
 
-- `salmansanusi90/legion-coordinator`
-- `salmansanusi90/legion-implementer`
-- `salmansanusi90/legion-verifier`
-- `salmansanusi90/legion-experience-review`
+- `salmansanusi90/legion-lead`
+- `salmansanusi90/legion-builder`
+- `salmansanusi90/legion-checker`
+- `salmansanusi90/legion-ux`
 
 Their owner instructions are live-linked to the files in `mandates/`. No BAND agent API keys are stored in this repository.
 
@@ -44,10 +44,10 @@ The initial BAND room is connectivity rehearsal only. Do not submit it. Create a
 For a newly created room, BAND creates one room-specific host session per seat. Start a room-specific seat with:
 
 ```bash
-band --session legion-coordinator restart --host-session default-ROOM_ID
-band --session legion-implementer restart --host-session default-ROOM_ID
-band --session legion-verifier restart --host-session default-ROOM_ID
-band --session legion-experience restart --host-session default-ROOM_ID
+band --session legion-lead restart --host-session default-ROOM_ID
+band --session legion-builder restart --host-session default-ROOM_ID
+band --session legion-checker restart --host-session default-ROOM_ID
+band --session legion-ux restart --host-session default-ROOM_ID
 ```
 
 Stop all workers without deleting their identities or room history:

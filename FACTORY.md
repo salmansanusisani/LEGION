@@ -13,10 +13,11 @@ This document will become the reproducible operating manual and evidence summary
 
 All standing mandates are stored in `mandates/` and are domain-neutral. Track-specific details belong only in the official task dispatched to the room.
 
-The submitted seat names are LEGION Coordinator, LEGION Implementer, LEGION Verifier,
-and LEGION Experience Reviewer. Their mandate files are respectively
-`legion-coordinator.md`, `legion-implementer.md`, `legion-verifier.md`, and
-`legion-experience-reviewer.md`.
+The submitted seat names are LEGION Lead, LEGION Builder, LEGION Checker, and LEGION
+UX. Their mandate files are respectively `legion-lead.md`, `legion-builder.md`,
+`legion-checker.md`, and `legion-ux.md`. These are replacement identities created
+after the earlier rehearsal runtimes lost their local templates. The earlier
+identities and remote room history were preserved, but are not the official roster.
 
 ## Runtime
 
@@ -26,10 +27,10 @@ and LEGION Experience Reviewer. Their mandate files are respectively
 - Authentication: inherited from the local OpenCode account; no provider key is stored in this repository
 - Runtime approval policy: `approve-all` for headless agent operation
 - Persistent BAND handles:
-  - `salmansanusi90/legion-coordinator`
-  - `salmansanusi90/legion-implementer`
-  - `salmansanusi90/legion-verifier`
-  - `salmansanusi90/legion-experience-review`
+  - `salmansanusi90/legion-lead`
+  - `salmansanusi90/legion-builder`
+  - `salmansanusi90/legion-checker`
+  - `salmansanusi90/legion-ux`
 
 The first connectivity room is rehearsal-only and must not be submitted as the official hackathon run.
 
@@ -68,8 +69,10 @@ as accepted work.
 
 Detach behavior requires care: this BAND version removed local owned-runtime
 templates when all host sessions were detached. Agent identities and remote room
-history persisted. Future scheduling uses worker stop/restart rather than bulk
-detach. Runtime restoration must be verified before official dispatch.
+history persisted. The owner explicitly approved recreation with the previous
+automatic execution policy. Four distinct replacement owned runtimes were created
+and linked to the corresponding generic mandates. Future scheduling uses worker
+stop/restart rather than bulk detach.
 
 ## Acceptance protocol
 

@@ -21,10 +21,10 @@ not to the supplied tests. Read failure output to diagnose observed defects.
 
 ## Roles and delivery
 
-- Coordinator: `@salmansanusi90/legion-coordinator`
-- Implementer: `@salmansanusi90/legion-implementer`
-- Independent verifier: `@salmansanusi90/legion-verifier`
-- Experience reviewer: `@salmansanusi90/legion-experience-review`
+- Coordinator: `@salmansanusi90/legion-lead`
+- Implementer: `@salmansanusi90/legion-builder`
+- Independent verifier: `@salmansanusi90/legion-checker`
+- Experience reviewer: `@salmansanusi90/legion-ux`
 
 Coordinator: read the participant guide and all four specifications, then create the
 numbered requirements ledger. The result repository contains factory documentation

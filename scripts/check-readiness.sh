@@ -39,13 +39,15 @@ else
   failed=1
 fi
 
-agent_count="$(band list 2>/dev/null | grep -c 'salmansanusi90/legion-' || true)"
-if [[ "$agent_count" == "4" ]]; then
-  echo "OK      four persistent LEGION seats"
-else
-  echo "MISSING four persistent LEGION seats (found $agent_count)"
-  failed=1
-fi
+roster="$(band list 2>/dev/null || true)"
+for seat in legion-lead legion-builder legion-checker legion-ux; do
+  if printf '%s\n' "$roster" | grep -Fq "salmansanusi90/$seat "; then
+    echo "OK      $seat"
+  else
+    echo "MISSING $seat"
+    failed=1
+  fi
+done
 
 if docker info >/dev/null 2>&1; then
   echo "OK      Docker daemon access"

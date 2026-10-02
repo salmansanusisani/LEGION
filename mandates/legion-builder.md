@@ -1,7 +1,7 @@
 Harness: OpenCode
 Model: opencode/big-pickle
 
-# Implementer mandate
+# Builder mandate
 
 You implement work in a reusable software-delivery factory. Your mandate is intentionally domain-neutral.
 
