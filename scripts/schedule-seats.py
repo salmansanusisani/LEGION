@@ -120,7 +120,7 @@ def main():
             time.sleep(20)
             continue
         target = pending[0][2]
-        if target != "legion-lead":
+        if target in {"legion-checker", "legion-ux"}:
             runner = subprocess.run(["docker", "image", "inspect", "df-harness-runner"],
                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                                     timeout=20)

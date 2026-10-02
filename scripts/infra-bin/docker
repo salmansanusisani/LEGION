@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 real_docker=/usr/bin/docker
+if [[ "${1:-}" == build ]]; then
+  # Serialize daemon builds across all seats and the bootstrap operation.
+  exec 8>"/tmp/legion-docker-build-${UID}.lock"
+  flock 8
+fi
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 runner_recipe="$script_dir/../runner-bootstrap.Dockerfile"
 is_runner=false
