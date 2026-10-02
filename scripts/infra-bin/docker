@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+real_docker=/usr/bin/docker
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+runner_recipe="$script_dir/../runner-bootstrap.Dockerfile"
+is_runner=false
+previous=''
+for arg in "$@"; do
+  if [[ "$previous" == '-t' && "$arg" == 'df-harness-runner' ]]; then
+    is_runner=true
+  fi
+  previous="$arg"
+done
+if [[ "${1:-}" == build && "$is_runner" == true ]]; then
+  # Keep the organizer checkout unchanged. Substitute only its infrastructure
+  # runner recipe, solely to tolerate long download pauses on this connection.
+  original_recipe=''
+  previous=''
+  for arg in "$@"; do
+    if [[ "$previous" == '-f' ]]; then original_recipe="$arg"; fi
+    previous="$arg"
+  done
+  expected=34ea5a6e447f81434df9f81c3d291198da959880d068c67ea4dbe810629db2ad
+  actual=$(sha256sum -- "$original_recipe")
+  if [[ "${actual%% *}" != "$expected" ]]; then
+    printf 'Runner recipe changed. Inspect before using the download-timeout adapter.\n' >&2
+    exit 42
+  fi
+  adapted=()
+  previous=''
+  for arg in "$@"; do
+    if [[ "$previous" == '-f' ]]; then
+      adapted+=("$runner_recipe")
+    else
+      adapted+=("$arg")
+    fi
+    previous="$arg"
+  done
+  printf 'Infrastructure adapter: official runner dependency pins, 180s download timeout.\n' >&2
+  exec "$real_docker" "${adapted[@]}"
+fi
+exec "$real_docker" "$@"

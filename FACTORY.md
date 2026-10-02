@@ -60,12 +60,24 @@ review mandates and checklist. No stage implementation was inherited. The comple
 four-stage initial task is retained in `evidence/official-dispatch.md`. All product
 code must come from the band's exchanges in the fresh official room.
 
-The official runner is built from the organizer's unchanged Dockerfile and pinned
-requirements. Its first build requires Playwright, Chromium and Linux browser
-dependencies; download progress is an infrastructure prerequisite rather than
-product acceptance evidence. Host-mode toy checks passed 8/8, but the earlier
-isolated attempts did not complete. Those attempts are retained and do not count
-as accepted work.
+The organizer's harness, tests, requirements and checkout remain unchanged. The
+original runner recipe repeatedly failed during dependency downloading, including
+a pip read timeout after 27 MB of a 48 MB wheel. An infrastructure adapter uses
+`scripts/runner-bootstrap.Dockerfile`, which preserves the Python image, exact
+dependency pins, installation commands and working directory while increasing
+dependency-download timeouts to 180 seconds. This does not change any service
+request, startup, suite or runtime-network limit.
+
+`scripts/infra-bin/docker` applies this disclosed recipe only when the harness
+builds `df-harness-runner`. It verifies the original recipe's SHA-256 first and
+passes every other Docker invocation through unchanged. The runtime wrapper adds
+that directory to PATH. Thus product builds use their original Dockerfiles, and
+the unchanged official suites still exercise the original isolated network and
+CPU/RAM limits. This is environment recovery, not official-package acceptance
+evidence. Reports must disclose the adapter.
+
+Host-mode toy checks passed 8/8, but the earlier isolated attempts did not complete.
+Those attempts are retained and do not count as accepted work.
 
 Detach behavior requires care: this BAND version removed local owned-runtime
 templates when all host sessions were detached. Agent identities and remote room
