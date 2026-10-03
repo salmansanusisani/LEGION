@@ -9,5 +9,6 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONUNBUFFERED=1 \
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip==26.2.1
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
-RUN playwright install --with-deps chromium
+RUN playwright install-deps chromium
+RUN playwright install chromium
 WORKDIR /work

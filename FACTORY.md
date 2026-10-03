@@ -68,8 +68,10 @@ dependency pins and working directory while increasing
 dependency-download timeouts to 180 seconds. A subsequent timeout showed that the
 base image's older pip discarded partial wheels. The adapter now pins only the
 installer to `pip==26.2.1`, enables up to 20 resume attempts and separates completed
-install steps into cached build layers. Test-library versions and the browser
-installation command remain unchanged. This does not change any service
+install steps into cached build layers. The Playwright dependency and Chromium
+installation phases are also split into their two documented commands so a completed
+system-package layer survives an interrupted browser download. Test-library versions
+and installed browser remain unchanged. This does not change any service
 request, startup, suite or runtime-network limit.
 
 `scripts/infra-bin/docker` applies this disclosed recipe only when the harness
