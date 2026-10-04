@@ -1,0 +1,10 @@
+# The build context is this folder only. Nothing below is needed inside the
+# image, and excluding it keeps the context minimal and the image reproducible.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+Dockerfile
+.dockerignore
+RUN.md
+README.md
